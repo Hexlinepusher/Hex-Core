@@ -1,0 +1,14 @@
+# @/.prettierignore - 排除不应被格式化器改写的过程文档、本地配置和生成产物
+# - ./.prettierrc.cjs
+# - ./package.json
+
+# ---- 私有过程文档 ---- #
+.docs
+# ---- 本地 IDE 配置 ---- #
+.idea
+# ---- 前端构建产物 ---- #
+dist/
+# ---- Tauri 生成文件 ---- #
+src-tauri/gen/
+# ---- 后端构建产物 ---- #
+src-tauri/target/

@@ -1,0 +1,34 @@
+/* @/tsconfig.json - 前端 TypeScript 编译配置
+ * - ./vite.config.ts
+ * - ./eslint.config.js */
+
+{
+  "compilerOptions": {
+    "target": "ES2022", // WebView2 支持
+    "lib": ["ES2022", "DOM", "DOM.Iterable"],
+    "module": "ESNext",
+    "moduleResolution": "bundler", // Vite 的解析策略
+    "jsx": "react-jsx", // React 17+ 自动 JSX 转换
+    "resolveJsonModule": true,
+    "allowImportingTsExtensions": true, // noEmit 下必需
+    "isolatedModules": true, // Vite esbuild 要求
+    "verbatimModuleSyntax": true, // 强制 import type 语法
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    "strict": true,
+    "exactOptionalPropertyTypes": true, // 区分 undefined 和不存在
+    "noUncheckedIndexedAccess": true,
+    "noPropertyAccessFromIndexSignature": true,
+    "noImplicitOverride": true,
+    "noImplicitReturns": true,
+    "noFallthroughCasesInSwitch": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "forceConsistentCasingInFileNames": true,
+    "noEmit": true, // 由 Vite 处理编译
+    "skipLibCheck": true
+  },
+
+  "include": ["src"],
+  "exclude": ["node_modules", "dist"]
+}

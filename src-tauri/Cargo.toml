@@ -1,0 +1,28 @@
+# @/src-tauri/Cargo.toml - Tauri 后端 Rust 依赖与构建配置
+# - ./src-tauri/src/lib.rs
+# - ./src-tauri/tauri.conf.json
+
+[package]
+name = "hex-core-app"
+version = "0.1.0"
+description = "A cross-platform local AI agent app template"
+license = "GPL-2.0-only"
+repository = "https://github.com/Hexlinepusher/Hex-Core"
+edition = "2021"
+rust-version = "1.88.0"
+
+[lib]
+name = "hex_core_app_lib"
+crate-type = ["staticlib", "cdylib", "rlib"]
+
+[build-dependencies]
+tauri-build = { version = "2.6.3", features = [] }
+
+[dependencies]
+log = "0.4"
+reqwest = { version = "0.13.3", features = ["json", "rustls"] }
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0"
+tauri = { version = "2.11.3", features = [] }
+tauri-plugin-log = "2"
+tauri-plugin-sql = { version = "2.4.0", features = ["sqlite"] }

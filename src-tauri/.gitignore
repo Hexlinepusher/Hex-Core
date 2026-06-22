@@ -1,0 +1,5 @@
+# @/src-tauri/.gitignore - 忽略 Tauri/Rust 生成文件
+# - ./src-tauri/Cargo.toml
+
+/target/
+/gen/schemas
