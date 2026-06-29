@@ -1,0 +1,66 @@
+# @/.github/workflows/pre-merge-check.yml - 合并前静态检查（类型、格式、Lint）
+# - ../../package.json
+# - ../../core/Cargo.toml
+
+name: Pre-merge Check
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+
+jobs:
+  # ========== 前端检查 ========== #
+  frontend:
+    name: Frontend (type + lint + format)
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: TypeScript type check
+        run: npm run -w web type:check
+
+      - name: ESLint check
+        run: npm run -w web lint:check
+
+      - name: Prettier format check
+        run: npm run -w web form:check
+
+  # ========== Rust 检查 ========== #
+  rust:
+    name: Rust (fmt + clippy)
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Rust toolchain
+        uses: dtolnay/rust-toolchain@stable
+        with:
+          components: rustfmt, clippy
+
+      - name: Cache Cargo registry and build
+        uses: Swatinem/rust-cache@v2
+        with:
+          workspaces: core
+
+      - name: Check formatting
+        working-directory: core
+        run: cargo fmt --check
+
+      - name: Run Clippy
+        working-directory: core
+        run: cargo clippy -- -D warnings

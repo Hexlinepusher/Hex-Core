@@ -1,4 +1,4 @@
-/* @/tailwind.config.js - Tailwind CSS 配置
+/* @/web/tailwind.config.js - Tailwind CSS 配置
  * - ./vite.config.ts
  * - ./src/index.css */
 

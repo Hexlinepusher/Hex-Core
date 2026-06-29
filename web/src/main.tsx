@@ -1,7 +1,7 @@
-/* @/src/main.tsx - React 应用入口
- * - ./index.html
- * - ./src/App.tsx
- * - ./src/index.css */
+/* @/web/src/main.tsx - React 应用入口
+ * - ../index.html
+ * - ./App.tsx
+ * - ./index.css */
 
 import React from 'react';
 import ReactDOM from 'react-dom/client';

@@ -1,0 +1,8 @@
+# @/web/.prettierignore - 排除不应被格式化器改写的生成产物
+# - ./.prettierrc.cjs
+# - ./package.json
+
+# ---- 前端构建产物 ---- #
+dist/
+# ---- 依赖目录 ---- #
+node_modules/

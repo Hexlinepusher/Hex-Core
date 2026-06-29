@@ -2,26 +2,26 @@
 # - ../../README.md
 # - ../../CLAUDE.md
 
-name: Workspace Skeleton Check # 工作流名称
+name: Workspace Skeleton Check
 
-on: # 触发条件
-  push: # 推送时触发
-    branches: # 目标分支
-      - main # 主分支
-  pull_request: # PR 时触发
+on:
+  push:
+    branches:
+      - main
+  pull_request:
 
-jobs: # 任务列表
-  workspace-skeleton: # 工作区骨架检查
-    name: Workspace skeleton # 任务名称
-    runs-on: ubuntu-latest # 运行环境
+jobs:
+  workspace-skeleton:
+    name: Workspace skeleton
+    runs-on: ubuntu-latest
 
-    steps: # 执行步骤
-      - name: Checkout repository # 拉取仓库
-        uses: actions/checkout@v4 # 官方 checkout action
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
 
-      - name: Check workspace skeleton files # 检查工作区骨架文件
-        shell: bash # 使用 Bash
-        run: | # 脚本内容
+      - name: Check workspace skeleton files
+        shell: bash
+        run: |
           required_files=(
             "README.md"
             "LICENSE"
@@ -29,16 +29,9 @@ jobs: # 任务列表
             "CLAUDE.md"
             "package.json"
             "package-lock.json"
-            "index.html"
-            "tsconfig.json"
-            "vite.config.ts"
-            "eslint.config.js"
-            "tailwind.config.js"
             ".editorconfig"
             ".gitattributes"
             ".gitignore"
-            ".prettierignore"
-            ".prettierrc.cjs"
             "DOCUMENTS/TechStack.md"
             "DOCUMENTS/Commands.md"
             ".docs/wanto/README.md"
@@ -47,10 +40,20 @@ jobs: # 任务列表
             ".docs/history/README.md"
             ".docs/references/README.md"
             ".docs/trashcan/README.md"
-            "src-tauri/Cargo.toml"
-            "src-tauri/Cargo.lock"
-            "src-tauri/build.rs"
-            "src-tauri/tauri.conf.json"
+            "web/package.json"
+            "web/index.html"
+            "web/tsconfig.json"
+            "web/vite.config.ts"
+            "web/eslint.config.js"
+            "web/tailwind.config.js"
+            "web/.prettierrc.cjs"
+            "web/.prettierignore"
+            "core/Cargo.toml"
+            "core/Cargo.lock"
+            "core/build.rs"
+            "core/tauri.conf.json"
+            "core/rustfmt.toml"
+            "core/clippy.toml"
           )
 
           missing=0

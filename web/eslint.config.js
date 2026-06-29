@@ -1,4 +1,4 @@
-/* @/eslint.config.js - 前端代码检查规则
+/* @/web/eslint.config.js - 前端代码检查规则
  * - ./tsconfig.json
  * - ./package.json */
 
@@ -15,8 +15,6 @@ export default [
     ignores: [
       'dist', // Vite 产物
       'node_modules',
-      '.docs',
-      'src-tauri', // Rust 后端
       '**/*.config.js',
       '**/*.config.ts',
       '.prettierrc.cjs',

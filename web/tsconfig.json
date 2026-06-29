@@ -1,4 +1,4 @@
-/* @/tsconfig.json - 前端 TypeScript 编译配置
+/* @/web/tsconfig.json - 前端 TypeScript 编译配置
  * - ./vite.config.ts
  * - ./eslint.config.js */
 

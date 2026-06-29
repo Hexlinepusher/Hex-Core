@@ -4,10 +4,10 @@
   "version": "0.1.0",
   "identifier": "com.hex-core.default",
   "build": {
-    "frontendDist": "../dist",
-    "devUrl": "http://localhost:1420",
-    "beforeDevCommand": "npm run frontend:dev",
-    "beforeBuildCommand": "npm run frontend:build"
+    "frontendDist": "../web/dist",
+    "devUrl": "http://localhost:5173",
+    "beforeDevCommand": "npm run -w web dev",
+    "beforeBuildCommand": "npm run -w web build"
   },
   "app": {
     "windows": [

@@ -12,46 +12,27 @@
     "url": "https://github.com/Hexlinepusher/Hex-Core/issues"
   },
   "homepage": "https://github.com/Hexlinepusher/Hex-Core#readme",
-  "type": "module",
+  "workspaces": [
+    "web"
+  ],
   "scripts": {
-    "app:dev": "tauri dev",
-    "app:build": "tauri build",
-    "frontend:dev": "vite",
-    "frontend:build": "tsc && vite build",
-    "type:check": "tsc --noEmit",
-    "lint:check": "eslint .",
-    "lint:fix": "eslint . --fix",
-    "format:check": "prettier --check \"**/*.{ts,tsx,js,jsx,json,md,yml,yaml}\"",
-    "format:fix": "prettier --write \"**/*.{ts,tsx,js,jsx,json,md,yml,yaml}\"",
-    "clean": "rimraf dist *.tsbuildinfo .eslintcache"
-  },
-  "dependencies": {
-    "@tauri-apps/api": "^2.11.1",
-    "@tauri-apps/plugin-sql": "^2.4.0",
-    "react": "^19.2.7",
-    "react-dom": "^19.2.7",
-    "zustand": "^5.0.14"
+    "type:check": "npm run -w web type:check",
+    "lint:check": "npm run -w web lint:check",
+    "lint:fix": "npm run -w web lint:fix",
+    "form:check": "npm run -w web form:check",
+    "form:fix": "npm run -w web form:fix",
+    "rust:check": "cd core && cargo fmt --check && cargo clippy -- -D warnings",
+    "rust:fix": "cd core && cargo fmt && cargo clippy --fix --allow-dirty --allow-staged",
+    "web:dev": "npm run -w web dev",
+    "web:build": "npm run -w web build",
+    "app:dev": "cross-env TAURI_DIR=core tauri dev",
+    "app:build": "cross-env TAURI_DIR=core tauri build",
+    "clean": "rimraf web/dist core/target"
   },
   "devDependencies": {
-    "@eslint/js": "^9.39.4",
-    "@tailwindcss/vite": "^4.3.1",
     "@tauri-apps/cli": "^2.11.3",
-    "@types/react": "^19.2.17",
-    "@types/react-dom": "^19.2.3",
-    "@typescript-eslint/eslint-plugin": "^8.61.1",
-    "@typescript-eslint/parser": "^8.61.1",
-    "@vitejs/plugin-react": "^6.0.2",
-    "eslint": "^9.39.4",
-    "eslint-import-resolver-typescript": "^4.4.5",
-    "eslint-plugin-import": "^2.32.0",
-    "eslint-plugin-jsdoc": "^63.0.6",
-    "eslint-plugin-react": "^7.37.5",
-    "eslint-plugin-react-hooks": "^7.1.1",
-    "prettier": "^3.8.4",
-    "rimraf": "^6.1.3",
-    "tailwindcss": "^4.3.1",
-    "typescript": "^6.0.3",
-    "vite": "^8.0.16"
+    "cross-env": "^10.1.0",
+    "rimraf": "^6.1.3"
   },
   "engines": {
     "node": "^20.19.0 || >=22.12.0"

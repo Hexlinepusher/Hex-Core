@@ -1,5 +1,5 @@
-/* @/src-tauri/src/main.rs - 桌面应用二进制入口
- * - ./src-tauri/src/lib.rs */
+/* @/core/src/main.rs - 桌面应用二进制入口
+ * - ./lib.rs */
 
 #![cfg_attr(not(debug_assertions), windows_subsystem = "windows")]
 

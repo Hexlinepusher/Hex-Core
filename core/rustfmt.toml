@@ -1,0 +1,7 @@
+# @/core/rustfmt.toml - Rust 代码格式化规则
+# - ./Cargo.toml
+
+edition = "2021" # 与 Cargo.toml 的 edition 保持一致
+max_width = 100 # 单行最大宽度
+tab_spaces = 4 # 缩进空格数
+use_field_init_shorthand = true # 允许字段初始化简写（Foo { x } 代替 Foo { x: x }）

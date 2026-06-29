@@ -1,6 +1,6 @@
-/* @/src/App.tsx - 主应用组件
- * - ./src/main.tsx
- * - ./src/index.css */
+/* @/web/src/App.tsx - 主应用组件
+ * - ./main.tsx
+ * - ./index.css */
 
 import type React from 'react';
 

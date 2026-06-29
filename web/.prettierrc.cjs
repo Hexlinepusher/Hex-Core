@@ -1,4 +1,4 @@
-/* @/.prettierrc.cjs - 代码格式化规则
+/* @/web/.prettierrc.cjs - 代码格式化规则
  * - ./.prettierignore
  * - ./package.json */
 

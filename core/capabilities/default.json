@@ -3,5 +3,5 @@
   "identifier": "default",
   "description": "启用 Hex-Core 模板的默认桌面权限",
   "windows": ["main"],
-  "permissions": ["core:default", "sql:default"]
+  "permissions": ["core:default"]
 }

@@ -1,0 +1,5 @@
+/* @/web/src/index.css - Tailwind CSS 全局样式入口
+ * - ./main.tsx
+ * - ../vite.config.ts */
+
+@import 'tailwindcss';
