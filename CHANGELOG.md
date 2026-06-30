@@ -1,15 +1,20 @@
-# 变更日志
+# Changelog
 
-本文记录 Hex-Core 的重要变更。
+All notable changes to this project will be documented in this file.
+
+The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
+and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
 
 ### Added
 
-- 补全工作区整理相关的本地过程文档索引。
-- 补全技术栈与模板能力速查文档。
-- 补全开发、构建、检查和清理命令速查文档。
-
 ### Changed
 
-- 精修 README，使其准确说明模板当前状态、快速开始方式和工作区结构。
+### Deprecated
+
+### Removed
+
+### Fixed
+
+### Security
